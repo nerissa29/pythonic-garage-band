@@ -1,6 +1,6 @@
 class Band:
     def __init__(self, name, members):
-        self.name = name
+        self.name = name or []
         self.members = members
 
 
@@ -15,12 +15,14 @@ class Guitarist(Musician):
     def __init__(self, name):
         super().__init__(name)
         self.name = name
-
     def __str__(self):
         return f"My name is {self.name} and I play guitar"
 
     def __repr__(self):
         return f"Guitarist instance. Name = {self.name}"
+
+    def get_instrument(self):
+        return "guitar"
 
 
 class Drummer(Musician):
@@ -34,6 +36,9 @@ class Drummer(Musician):
     def __repr__(self):
         return f"Drummer instance. Name = {self.name}"
 
+    def get_instrument(self):
+        return "drums"
+
 
 class Bassist(Musician):
     def __init__(self, name):
@@ -45,6 +50,11 @@ class Bassist(Musician):
 
     def __repr__(self):
         return f"Bassist instance. Name = {self.name}"
+
+    def get_instrument(self):
+        return "bass"
+
+
 
 
 
