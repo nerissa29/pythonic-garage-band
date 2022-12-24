@@ -1,7 +1,13 @@
 class Band:
+    list_of_members = []
     def __init__(self, name, members):
-        self.name = name or []
+        self.name = name
         self.members = members
+        self.__class__.list_of_members.append(self)
+
+
+    # def one_band(self):
+    #     list_of_members.append(self.name)
 
 
 # base class
@@ -23,6 +29,9 @@ class Guitarist(Musician):
 
     def get_instrument(self):
         return "guitar"
+
+    def individual_solos(one_band):
+        pass
 
 
 class Drummer(Musician):
@@ -53,6 +62,16 @@ class Bassist(Musician):
 
     def get_instrument(self):
         return "bass"
+
+
+
+
+
+
+
+
+
+
 
 
 
